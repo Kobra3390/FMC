@@ -6,6 +6,9 @@ from function import *
 
 console = Console()
 
+print("\n")
+Loading_Bar()
+
 console.print("""[blue] ______   __    __     ______    
 /\  ___\ /\ "-./  \   /\  ___\   
 \ \  __\ \ \ \-./\ \  \ \ \____  
@@ -14,6 +17,7 @@ console.print("""[blue] ______   __    __     ______
                                  
 
 """)
+console.print("[red] THE POWER OF MACCHANGER IN A SCRIPT\n")
 
 console.print("[red][1] Install Macchanger")
 print("\n")
