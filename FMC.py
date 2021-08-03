@@ -2,6 +2,7 @@ import rich
 from rich.console import Console
 from rich.progress import track
 from function import *
+from function import *
 
 console = Console()
 
@@ -14,3 +15,10 @@ console.print("""[blue] ______   __    __     ______
 
 """)
 
+console.print("[red][1] Install Macchanger")
+print("\n")
+
+options = int(input("Enter a options: "))
+
+if(options == 1):
+  Install_Macchanger()
