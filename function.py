@@ -14,3 +14,17 @@ def Install_Macchanger():
 def Loading_Bar():
     for step in track(range(100), description="Loading..."):
         sleep(0.1)
+
+def Change_Mac_Manually():
+    interface = input("Enter a interface: ")
+    new_mac_address = input("Enter a new mac address for machine [EXAMPLE 00:00:00:00:00:01]: ") 
+    choice = input("Run command with Root? ")
+    if((choice == "Yes") or (choice == "Y") or (choice == "yes") or (choice == "y")):
+        subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "down"])
+        subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "address", new_mac_address])
+        subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "up"])
+    if((choice == "No") or (choice == "N") or (choice == "no") or (choice == "n")):
+        subprocess.run(["ip", "link", "set", "dev", interface, "down"])
+        subprocess.run(["ip", "link", "set", "dev", interface, "address", new_mac_address])
+        subprocess.run(["ip", "link", "set", "dev", interface, "up"])   
+    
