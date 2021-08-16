@@ -20,12 +20,17 @@ console.print("""[blue] ______   __    __     ______
 console.print("[red] THE POWER OF MACCHANGER IN A SCRIPT\n")
 
 console.print("[red][1] Install Macchanger")
-console.print("[red][2] Changer The Mac Address Manually")
+console.print("[red][2] Change The Mac Address Manually")
+console.print("[red][3] Change New Mac Address")
+console.print("[red][4] Show The Current Mac Address")
 print("\n")
 
 options = int(input("Enter a options: "))
 
 if(options == 1):
   Install_Macchanger()
-if(options == 2):
+elif(options == 2):
   Change_Mac_Manually()
+elif(options == 3):
+  Change_New_Mac_Address()
+

@@ -6,9 +6,9 @@ def Install_Macchanger():
     options = input("Install Macchanger as Root? ")
     if((options == "Yes") or (options == "Y") or (options == "yes") or (options == "y")):
         subprocess.run(["sudo", "apt", "install", "macchanger"])
-    if((options == "No") or (options == "N") or (options == "no") or (options == "n")):
+    elif((options == "No") or (options == "N") or (options == "no") or (options == "n")):
         subprocess.run(["apt", "install", "macchanger"])
-    if((options != "Yes") or (options != "No") or (options != "Y") or (options != "N") or (options != "yes") or (options != "no") or (options != "y") or (options != "n")):
+    else:
         print("Error in the input option...")
 
 def Loading_Bar():
@@ -23,8 +23,24 @@ def Change_Mac_Manually():
         subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "down"])
         subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "address", new_mac_address])
         subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "up"])
-    if((choice == "No") or (choice == "N") or (choice == "no") or (choice == "n")):
+    elif((choice == "No") or (choice == "N") or (choice == "no") or (choice == "n")):
         subprocess.run(["ip", "link", "set", "dev", interface, "down"])
         subprocess.run(["ip", "link", "set", "dev", interface, "address", new_mac_address])
-        subprocess.run(["ip", "link", "set", "dev", interface, "up"])   
+        subprocess.run(["ip", "link", "set", "dev", interface, "up"])
+    else:
+        print("Error in the input option...")
+
+def Change_New_Mac_Address():
+    interface = input("Enter a interface: ")
+    choice = input("Run command with Root? ")
+    if((choice == "Yes") or (choice == "Y") or (choice == "yes") or (choice == "y")):
+        subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "down"])
+        subprocess.run(["sudo", "macchanger", "-a", interface])
+        subprocess.run(["sudo","ip", "link", "set", "dev", interface, "up"])
+    elif((choice == "No") or (choice == "N") or (choice == "no") or (choice == "n")):
+        subprocess.run(["ip", "link", "set", "dev", interface, "down"])
+        subprocess.run(["macchanger", "-a", interface])
+        subprocess.run(["ip", "link", "set", "dev", interface, "up"])
+    else:
+        print("Error in the input option...")
     
