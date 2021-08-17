@@ -33,4 +33,7 @@ elif(options == 2):
   Change_Mac_Manually()
 elif(options == 3):
   Change_New_Mac_Address()
+elif(options == 4):
+  Show_Current_Perma_Mac()
+
 

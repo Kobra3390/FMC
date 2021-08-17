@@ -44,3 +44,8 @@ def Change_New_Mac_Address():
     else:
         print("Error in the input option...")
     
+def Show_Current_Perma_Mac():
+    interface = input("Enter a interface: ")
+    print("\n")
+    subprocess.run(["macchanger", "-s", interface])
+    print("\n")
