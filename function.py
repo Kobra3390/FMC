@@ -49,3 +49,12 @@ def Show_Current_Perma_Mac():
     print("\n")
     subprocess.run(["macchanger", "-s", interface])
     print("\n")
+
+def Reset_Original_Mac_Address():
+    interface = input("Enter a interface: ")
+    print("\n")
+    subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "down"])
+    subprocess.run(["sudo", "macchanger", "-p", interface])
+    subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "up"])
+
+

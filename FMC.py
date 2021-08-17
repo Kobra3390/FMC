@@ -23,6 +23,7 @@ console.print("[red][1] Install Macchanger")
 console.print("[red][2] Change The Mac Address Manually")
 console.print("[red][3] Change New Mac Address")
 console.print("[red][4] Show The Current Mac Address")
+console.print("[red][5] Back To The Original Mac Address")
 print("\n")
 
 options = int(input("Enter a options: "))
@@ -35,5 +36,6 @@ elif(options == 3):
   Change_New_Mac_Address()
 elif(options == 4):
   Show_Current_Perma_Mac()
-
+elif(options == 5):
+  Reset_Original_Mac_Address()
 
