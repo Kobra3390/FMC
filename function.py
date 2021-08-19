@@ -57,4 +57,9 @@ def Reset_Original_Mac_Address():
     subprocess.run(["sudo", "macchanger", "-p", interface])
     subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "up"])
 
-
+def Full_Random_Mac_Address():
+    interface = input("Enter a interface: ")
+    print("\n")
+    subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "down"])
+    subprocess.run(["sudo", "macchanger", "-r", interface])
+    subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "up"])
