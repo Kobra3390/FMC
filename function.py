@@ -23,24 +23,29 @@ def Change_Mac_Manually():
         subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "down"])
         subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "address", new_mac_address])
         subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "up"])
+        print("\n")
     elif((choice == "No") or (choice == "N") or (choice == "no") or (choice == "n")):
         subprocess.run(["ip", "link", "set", "dev", interface, "down"])
         subprocess.run(["ip", "link", "set", "dev", interface, "address", new_mac_address])
         subprocess.run(["ip", "link", "set", "dev", interface, "up"])
+        print("\n")
     else:
         print("Error in the input option...")
 
 def Change_New_Mac_Address():
     interface = input("Enter a interface: ")
     choice = input("Run command with Root? ")
+    print("\n")
     if((choice == "Yes") or (choice == "Y") or (choice == "yes") or (choice == "y")):
         subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "down"])
         subprocess.run(["sudo", "macchanger", "-a", interface])
         subprocess.run(["sudo","ip", "link", "set", "dev", interface, "up"])
+        print("\n")
     elif((choice == "No") or (choice == "N") or (choice == "no") or (choice == "n")):
         subprocess.run(["ip", "link", "set", "dev", interface, "down"])
         subprocess.run(["macchanger", "-a", interface])
         subprocess.run(["ip", "link", "set", "dev", interface, "up"])
+        print("\n")
     else:
         print("Error in the input option...")
     
@@ -56,6 +61,7 @@ def Reset_Original_Mac_Address():
     subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "down"])
     subprocess.run(["sudo", "macchanger", "-p", interface])
     subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "up"])
+    print("\n")
 
 def Full_Random_Mac_Address():
     interface = input("Enter a interface: ")
@@ -63,3 +69,4 @@ def Full_Random_Mac_Address():
     subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "down"])
     subprocess.run(["sudo", "macchanger", "-r", interface])
     subprocess.run(["sudo", "ip", "link", "set", "dev", interface, "up"])
+    print("\n")

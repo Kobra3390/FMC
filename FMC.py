@@ -17,7 +17,7 @@ console.print("""[blue] ______   __    __     ______
                                  
 
 """)
-console.print("[red] THE POWER OF MACCHANGER IN A SCRIPT\n")
+console.print("[red] [ THE POWER OF MACCHANGER IN A SCRIPT ]\n")
 
 console.print("[red][1] Install Macchanger")
 console.print("[red][2] Change The Mac Address Manually")
